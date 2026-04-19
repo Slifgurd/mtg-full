@@ -6,6 +6,20 @@ import mongoose from "mongoose";
 import { validatePlayCard } from "./utils/validation.js";
 import { withLock } from "./utils/locks.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve os arquivos do frontend que o Vite vai criar na pasta 'dist'
+app.use(express.static(path.join(__dirname, "dist")));
+
+// Se alguém acessar qualquer rota, entrega o index.html do frontend
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 const app = express();
 app.use(express.json());
 
