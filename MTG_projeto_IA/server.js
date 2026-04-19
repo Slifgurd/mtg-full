@@ -3,8 +3,8 @@ import http from "http";
 import { Server } from "socket.io";
 import mongoose from "mongoose";
 
-import { validatePlayCard } from "./utils/validation.js";
-import { withLock } from "./utils/locks.js";
+import { validatePlayCard } from "./Server/utils/validation.js";
+import { withLock } from "./Server/utils/locks.js";
 
 import path from "path";
 import { fileURLToPath } from "url";
