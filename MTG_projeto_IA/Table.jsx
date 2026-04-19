@@ -1,4 +1,4 @@
-import { socket } from "../socket";
+import { socket } from "./socket";
 import PlayerZone from "./PlayerZone";
 
 export default function Table({ room }) {
