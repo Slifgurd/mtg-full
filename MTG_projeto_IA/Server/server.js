@@ -111,6 +111,11 @@ io.on("connection", (socket) => {
 
 });
 
+const mongoURI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/mtg";
+mongoose.connect(mongoURI)
+  .then(() => console.log("MongoDB conectado com sucesso!"))
+  .catch(err => console.error("Erro ao conectar MongoDB:", err));
+
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, "0.0.0.0", () => {
