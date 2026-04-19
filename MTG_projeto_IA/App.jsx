@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { socket } from "./client/src/socket";
-import Table from "./client/src/components/Table";
+import { socket } from "./socket.jsx";
+import Table from "./Table.jsx";
 
 export default function App() {
   const [room, setRoom] = useState(null);
