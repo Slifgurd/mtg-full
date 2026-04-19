@@ -9,7 +9,10 @@ import { withLock } from "./utils/locks.js";
 const app = express();
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/mtg");
+const mongoURI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/mtg";
+mongoose.connect(mongoURI)
+  .then(() => console.log("MongoDB conectado"))
+  .catch(err => console.error("Erro ao conectar MongoDB:", err));
 
 const server = http.createServer(app);
 
