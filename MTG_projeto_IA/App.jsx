@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { socket } from "./socket";
+import { socket } from "./client/src/socket";
 import Table from "./client/src/components/Table";
 
 export default function App() {
