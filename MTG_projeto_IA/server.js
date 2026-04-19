@@ -11,7 +11,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+const app = express();
 // Serve os arquivos do frontend que o Vite vai criar na pasta 'dist'
 app.use(express.static(path.join(__dirname, "dist")));
 
@@ -20,7 +20,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-const app = express();
 app.use(express.json());
 
 const mongoURI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/mtg";
