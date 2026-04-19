@@ -1,4 +1,4 @@
-import { socket } from "../socket";
+import { socket } from "./socket";
 
 export default function PlayerZone({ player, isMe }) {
 
